@@ -34,9 +34,6 @@ body {
     background: -ms-linear-gradient(-45deg, rgba(16,168,110,1) 0%, rgba(20,182,147,1) 100%);
     background: linear-gradient(135deg, rgba(16,168,110,1) 0%, rgba(20,182,147,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10a86e', endColorstr='#14b693', GradientType=1 );
-    /*min-height: 40vh;*/
-    /*min-height: 40vh;
-    color: white;*/
 }
 
 .catchphrase {
@@ -209,6 +206,10 @@ hr {
     margin-top: 1em;
     padding: 1em;
     /*margin-top: 1em;*/
+}
+
+.top-learn-explan {
+    margin: auto;
 }
 
 
