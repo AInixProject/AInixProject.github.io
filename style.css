@@ -187,9 +187,9 @@ hr {
     background-color: white;
     border: 1px solid #888;
     padding: 1em;
-    max-width: 500px;
+    /*max-width: 500px;
     margin: auto;
-    margin-top: 1em;
+    margin-top: 1em;*/
 }
 
 .learn-icon {
@@ -201,8 +201,9 @@ hr {
 .new-queries {
     background-color: white;
     border: 1px solid #888;
-    padding: 1em;
     margin-top: 1em;
+    padding: 1em;
+    /*margin-top: 1em;*/
 }
 
 

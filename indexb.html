@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AInix: AI-assisted computing platform</title>
+    <title>AInix: Free AI-assisted computing platform</title>
     <!--This page is uses Bulma. It was also written by someone who
-    had never used Bulma before (it just seemed like a fun thing to try) 
+    had never used Bulma before (it just seemed like a fun new thing to try) 
     but didn't really bother to read the docs, so it was used rather poorly 
     and halfheartedly. In future refactorings more care can be taken in 
     design / framework selection.-->
@@ -56,90 +56,92 @@
           ("shells"), from a command line shell, to a voice assitant, to a 
           video game character.
         </h2>
-        <div>
-          <div>
+        <div class="kenel-flow-diagram columns is-desktop is-vcentered">
+          <div class="column is-one-third">
             <div>
-              Specification of Program (or other structured object):
+              Specification of Program<br>(or other structured object):
             </div>
             <div class="file-example">
               ls.ainix.yaml
               <pre class="prettyprint lang-yaml">
 defines:
-  - define_new: object
-    name: ls
-    type: Program
-    type_data: {invoke_name: "ls"}
-    children:
-      - name: a
-        arg_data: {short_name: "a"}
-      - name: l
-        arg_data: {short_name: "l"}
-      # Other args...
-      - name: filelist
-        type: PathList
-        arg_data:
-          position: 0
-          multiword_pos_arg: True
-              </pre>
-            </div>
+- define_new: object
+  name: ls
+  type: Program
+  type_data: {invoke_name: "ls"}
+  children:
+    - name: a
+      arg_data: {short_name: "a"}
+    - name: l
+      arg_data: {short_name: "l"}
+    # Other args...
+    - name: filelist
+      type: PathList
+      arg_data:
+        position: 0
+        multiword_pos_arg: True
+            </pre>
           </div>
+        </div>
+        <div class="column is-one-third">
           <div>
-            <div>
-              Provide some examples:
-            </div>
-            <div class="file-example">
-              ls_examples.ainix.yaml
-              <pre class="prettyprint lang-yaml">
+            Provide some examples:
+          </div>
+          <div class="file-example">
+            ls_examples.ainix.yaml
+            <pre class="prettyprint lang-yaml">
 defines:
-  - define_new: example_set
-    y_type: CommandSequence
-    examples:
-      - x:
-        - list all files
-        - print all files and directories here
-        - list all files and dirs in this dir
-        y:
-        - "ls"
-      - x:
-        - list all files with stuff like file size
-        - list all files in long format
-        - display a long list of current directory
-        y:
-        - "ls -l"
-      - x:
-        - list all files with dot files
-        - list all files with hidden files
-        - list all including dot files
-        y:
-        - "ls -a"
-      # Examples...
+- define_new: example_set
+  y_type: CommandSequence
+  examples:
+    - x:
+      - list all files
+      - print all files and directories here
+      - list all files and dirs in this dir
+      y:
+      - "ls"
+    - x:
+      - list all files in long format
+      - list all files stuff like file size
+      - display a long list of current dir
+      y:
+      - "ls -l"
+    - x:
+      - list all files with dot files
+      - list all files with hidden files
+      - list all including dot files
+      y:
+      - "ls -a"
+    # Examples...
               </pre>
             </div>
           </div>
-        </div>
-        <div class="learning-block">
-          <!--Cogs isn't really the best illustration, but it will
-          work for now...-->
-          <div class="columns is-mobile is-vcentered">
-            <div class="column learn-icon is-one-quarter">
-              <i class="fas fa-cogs"></i>
+          <div class="column is-one-third is-vcentered">
+            <div class="learning-block">
+              <!--Cogs isn't really the best illustration, but it will
+              work for now...-->
+              <div class="columns is-mobile is-vcentered">
+                <div class="column learn-icon is-one-quarter">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <div class="column">
+                AInix learns other potential phrasings of the command,
+                and how it might be used with other commands or concepts
+                it knows about.
+                </div>
+              </div>
             </div>
-            <div class="column">
-            AInix learns other potential phrasings of the command,
-            and how it might be used with other commands or concepts
-            it knows about.
+            <div class="new-queries">
+              New User Utterances:
+              <div>what files and dirs are here? -> ls</div>
+              <div>show files here with dot files -> ls -a</div>
+              ...
             </div>
+            <i>More examples of what programs and examples might look like
+            are available on the repo, and actual docs should hopefully be
+            available soon.</i>
           </div>
         </div>
-        <div class="new-queries">
-          New User Utterances:
-          <div>what files and dirs are here? -> ls</div>
-          <div>show files here with dot files -> ls -a</div>
-          ...
-        </div>
-        <i>More examples of what programs and examples might look like
-        are available on the repo, and actual docs are coming
-        soon.</i>
       </div>
     </div>
   </section>
@@ -194,8 +196,8 @@ defines:
           whole webpages) inline in a shell. It will also focus on being 
           data centric, so that different kinds of shells can present output 
           in different ways. 
-          For example, a command line shell, a voice assistent, a chatbot,
-          and touch screen display might all choose to present a program 
+          For example, a command line shell, a voice assistent, and a chatbot
+          might all choose to present a program 
           outputting something like 
           progress bar event or a calendar date in different ways.
           Concrete work on axio has not yet begun (the plan
