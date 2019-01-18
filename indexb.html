@@ -44,22 +44,14 @@
           Developers can give it a description of a command and some 
           examples, and it then uses machine learning to understand many 
           different phrasings of the command. 
-          The current focus is building support for traditional 
-          Unix-like commands such as "ls", "grep", and "find". However, The AInix Kernel is 
-          intended to in the future just as easily learn commands for things like 
-          checking the weather, setting the thermostat, or ordering something 
-          online. Additionally it is designed to be
-          adaptable enough to eventually support many kinds of user interfaces
-          ("shells"), from a command line shell, to a voice assitant, to a 
-          video game character.
         </h2>
         <div class="kenel-flow-diagram columns is-desktop is-vcentered">
           <div class="column is-one-third">
-            <div>
-              Specification of Program<br>(or other structured object):
+            <div class="has-text-centered is-size-5">
+              Specification of Program<br>
+              <span class="is-size-6">(or other structured object):</span>
             </div>
             <div class="file-example">
-              ls.ainix.yaml
               <pre class="prettyprint lang-yaml">
 defines:
 - define_new: object
@@ -78,14 +70,14 @@ defines:
         position: 0
         multiword_pos_arg: True
             </pre>
+            ls.ainix.yaml
           </div>
         </div>
         <div class="column is-one-third">
-          <div>
+          <div class="has-text-centered is-size-5">
             Provide some examples:
           </div>
           <div class="file-example">
-            ls_examples.ainix.yaml
             <pre class="prettyprint lang-yaml">
 defines:
 - define_new: example_set
@@ -111,6 +103,7 @@ defines:
       - "ls -a"
     # Examples...
               </pre>
+            ls_examples.ainix.yaml
             </div>
           </div>
           <div class="column is-one-third is-vcentered">
@@ -129,7 +122,7 @@ defines:
               </div>
             </div>
             <div class="new-queries">
-              New User Utterances:
+              <div class="has-text-centered is-size-5">New User Utterances:</div>
               <div>what files and dirs are here? -> ls</div>
               <div>show files here with dot files -> ls -a</div>
               ...
@@ -138,6 +131,16 @@ defines:
             are available on the repo, and actual docs should hopefully be
             available soon.</i>
           </div>
+        </div>
+        <div class="is-size-5">
+          The current focus is building support for traditional 
+          Unix-like commands such as "ls", "grep", and "find". However, The AInix Kernel is 
+          intended to in the future just as easily learn commands for things like 
+          checking the weather, setting the thermostat, or ordering something 
+          online. Additionally it is designed to be
+          adaptable enough to eventually support many kinds of user interfaces
+          ("shells"), from a command line shell, to a voice assitant, to a 
+          video game character.
         </div>
       </div>
     </div>
