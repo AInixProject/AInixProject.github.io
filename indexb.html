@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AInix: AI-assisted computing platform</title>
+    <!--This page is uses Bulma. It was also written by someone who
+    had never used Bulma before (it just seemed like a fun thing to try) 
+    but didn't really bother to read the docs, so it was used rather poorly 
+    and halfheartedly. In future refactorings more care can be taken in 
+    design / framework selection.-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="hero top-header">
+    <div class="hero-body">
+    <div class="container">
+      <!--<h1 class="title">
+          AInix
+      </h1>-->
+      <div class="top-text">
+        <p class="title catchphrase">
+          <strong>AInix is a free and open platform for AI-assisted computing.</strong> 
+        </p>
+        <p class="next-p">It enables
+        applications like aish, a command-line shell that understands both
+        natural language, and normal shell commands. The project is currently
+        in an early pre-alpha Proof of Concept stage with many aspects still
+        in development.
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="section">
+      <div class="container">
+        <!--<hr>
+        <h1 class="title">The Ecosystem</h1>
+        <hr>-->
+        <h1 class="title">AInix Kernel</h1>
+        <h2 class="subtitle">
+          At the core of the AInix (pronounced like "a eye nick's") Project is the AInix 
+          Kernel. It is intended to be 
+          a user friendly semantic understanding system. 
+          Developers can give it a description of a command and some 
+          examples, and it then uses machine learning to understand many 
+          different phrasings of the command. 
+          The current focus is building support for traditional 
+          Unix-like commands such as "ls", "grep", and "find". However, The AInix Kernel is 
+          intended to in the future just as easily learn commands for things like 
+          checking the weather, setting the thermostat, or ordering something 
+          online. Additionally it is designed to be
+          adaptable enough to eventually support many kinds of user interfaces
+          ("shells"), from a command line shell, to a voice assitant, to a 
+          video game character.
+        </h2>
+        <div>
+          <div>
+            <div>
+              Specification of Program (or other structured object):
+            </div>
+            <div class="file-example">
+              ls.ainix.yaml
+              <pre class="prettyprint lang-yaml">
+defines:
+  - define_new: object
+    name: ls
+    type: Program
+    type_data: {invoke_name: "ls"}
+    children:
+      - name: a
+        arg_data: {short_name: "a"}
+      - name: l
+        arg_data: {short_name: "l"}
+      # Other args...
+      - name: filelist
+        type: PathList
+        arg_data:
+          position: 0
+          multiword_pos_arg: True
+              </pre>
+            </div>
+          </div>
+          <div>
+            <div>
+              Provide some examples:
+            </div>
+            <div class="file-example">
+              ls_examples.ainix.yaml
+              <pre class="prettyprint lang-yaml">
+defines:
+  - define_new: example_set
+    y_type: CommandSequence
+    examples:
+      - x:
+        - list all files
+        - print all files and directories here
+        - list all files and dirs in this dir
+        y:
+        - "ls"
+      - x:
+        - list all files with stuff like file size
+        - list all files in long format
+        - display a long list of current directory
+        y:
+        - "ls -l"
+      - x:
+        - list all files with dot files
+        - list all files with hidden files
+        - list all including dot files
+        y:
+        - "ls -a"
+      # Examples...
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div class="learning-block">
+          <!--Cogs isn't really the best illustration, but it will
+          work for now...-->
+          <div class="columns is-mobile is-vcentered">
+            <div class="column learn-icon is-one-quarter">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <div class="column">
+            AInix learns other potential phrasings of the command,
+            and how it might be used with other commands or concepts
+            it knows about.
+            </div>
+          </div>
+        </div>
+        <div class="new-queries">
+          New User Utterances:
+          <div>what files and dirs are here? -> ls</div>
+          <div>show files here with dot files -> ls -a</div>
+          ...
+        </div>
+        <i>More examples of what programs and examples might look like
+        are available on the repo, and actual docs are coming
+        soon.</i>
+      </div>
+    </div>
+  </section>
+  </body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">aish</h1>
+      <h2 class="subtitle">
+        aish is a command-line shell for Unix-like systems which is intended 
+        help you spend more time in the shell, and less time reading man pages
+        or copying and pasting commands from the internet. By
+        leveraging the AI-nix Kernel, it integrates natural language
+        into the command line.
+      </h2>
+      <div class="shell-example-card">
+        <div class="card-head">Express common shell commands in natural language, and get an 
+        executable command back.</div>
+        <div class="shell-box">
+          <span class="shell-prompt">$</span> list all files in long format sorted by file size<br>
+          Model predict "ls -lS" (Confidence 0.82)<br>
+          Would you like to execute this? "yes" to confirm:
+        </div>
+      </div>
+      <div class="shell-example-card">
+        <div class="card-head">Mix natural lanugage and shell commands to fill in the flags you
+        might have forgotten.
+        </div>
+        <div class="shell-box">
+          <span class="shell-prompt">$</span> run ls -l but sorted by file size<br>
+          Model predict "ls -lS" (Confidence 0.89)<br>
+          Would you like to execute this? "yes" to confirm:
+        </div>
+      </div>
+      <div class="shell-example-card">
+        <div class="card-head">When given normal shell commands aish acts just like 
+          more traditional shell like Bash.
+        </div>
+        <div class="shell-box">
+          <div>
+          <span class="shell-prompt">$</span> ls -lS<br>
+          foo.txt     bar.txt     baz.txt<br>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+      <div class="container">
+        <h1 class="title">axio</h1>
+        <h2 class="subtitle">
+          axio is a planned communication spec that will work over stdout and
+          stdin but allow for rich output (like images, charts, street maps, or
+          whole webpages) inline in a shell. It will also focus on being 
+          data centric, so that different kinds of shells can present output 
+          in different ways. 
+          For example, a command line shell, a voice assistent, a chatbot,
+          and touch screen display might all choose to present a program 
+          outputting something like 
+          progress bar event or a calendar date in different ways.
+          Concrete work on axio has not yet begun (the plan
+          is to start work on it once the AInix Kernel and aish are in a 
+          moderately stable place, which might take quite a while)
+        </h2>
+  </section>
+  <section class="section">
+    <div class="container">
+      <hr>
+      <h1 class="title">Open Source Matters.</h1>
+      <hr>
+      <div class="speech-bubble-thing">
+        <div class="speech-bubble top-speech first-bubble">
+          Hey computer...
+        </div>
+        <div class="speech-bubble left-speech">
+          How do you work?
+        </div>
+        <div class="speech-bubble right-speech">
+          Can I trust you?
+        </div>
+        <div class="speech-bubble left-speech">
+          What are you doing with all my data?
+        </div>
+        <div class="speech-bubble right-speech no-mobile">
+          Are you telling me that because it's in my best interest,
+          or did someone just bribe you to?
+        </div>
+        <div class="speech-bubble left-speech no-mobile">
+          Can I modify how you work to meet the needs of this cool
+          app or product idea I have?
+        </div>
+        <div class="speech-bubble right-speech">
+          How can I debug that weird error message you're giving me when 
+          trying to open those doors?
+        </div>
+        <img class="mostlyharmless" src="hal.svg"></img>
+        <div class="speech-bubble top-speech last-bubble">
+          I'm sorry, I'm afraid I can't do that.
+        </div>
+      </div>
+      <h2 class="subtitle">
+        Interacting with computers through language is no longer science fiction.
+        As these systems become increasingly prevolent and more and more 
+        essential to our daily lives, it is important there are open source 
+        options. The AInix Project is building a language driven computing
+        platform that puts the user first, and hopes to help aid work 
+        towards more safe, transparent, and understandable AI.
+      </h2>
+    </div>
+  </section>
+  <section class="section">
+      <div class="container">
+        <hr>
+        <h1 class="title">Get Involved</h1>
+        <hr>
+        <h2 class="subtitle">
+          You can follow development at our Github repo. We welcome any ideas, bug reports, or 
+          contributions. It is early enough where any contributions you make can
+          have a big impact on the future of the project.
+        </h2>
+  </section>
+  <div class="footer">
+
+  </div>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script src="yamlprettyp.js"></script>  
+</html>

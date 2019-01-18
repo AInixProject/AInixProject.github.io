@@ -1,0 +1,238 @@
+/*.top-header {
+    background-color: #14B694;
+    min-height: 40vh;
+}*/
+:root {
+    --primary-color: #14B694;
+    --primary-light: rgb(72, 214, 183);
+    --caution-color: rgb(63, 16, 16);
+}
+
+.intro-paragraph {
+    max-width: 600px;
+    padding: 30px;
+    margin: auto;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(233, 233, 233);
+}
+
+.top-text {
+    max-width: 600;
+}
+
+.top-header {
+    /*background-color: #14B694;*/
+    background: rgba(16,168,110,1);
+    background: -moz-linear-gradient(-45deg, rgba(16,168,110,1) 0%, rgba(20,182,147,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(16,168,110,1)), color-stop(100%, rgba(20,182,147,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(16,168,110,1) 0%, rgba(20,182,147,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(16,168,110,1) 0%, rgba(20,182,147,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(16,168,110,1) 0%, rgba(20,182,147,1) 100%);
+    background: linear-gradient(135deg, rgba(16,168,110,1) 0%, rgba(20,182,147,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10a86e', endColorstr='#14b693', GradientType=1 );
+    min-height: 40vh;
+    /*min-height: 40vh;
+    color: white;*/
+}
+
+/*.catchphrase {
+    padding-bottom: 0px;
+}
+
+.next-p {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+*/
+
+.speech-bubble { 
+    position: relative; 
+    background: var(--primary-light); 
+    border-radius: 1em; 
+    text-align: center;
+    padding: 0.6em;
+    width: auto;
+    margin: auto;
+    margin-bottom: 10px;
+    max-width: 80%;
+    font-size: 1.2em;
+    box-shadow: 3px 6px 4px;
+} 
+
+.speech-bubble.top-speech.first-bubble:after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 50%; 
+    width: 0; 
+    height: 0; 
+    border: 20px solid transparent; 
+    border-bottom-color: var(--primary-color); 
+    border-top: 0px; 
+    margin-left: -20px; 
+    margin-top: -19px; 
+}
+
+.speech-bubble.right-speech:after { 
+    content: '';
+	position: absolute;
+	right: 0;
+	top: 40%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: var(--primary-light);
+	border-right: 0px;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -15px;
+}
+
+.speech-bubble.left-speech:after { 
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 40%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: var(--primary-light);
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -15px;
+}
+
+.mostlyharmless {
+    max-width: 60%;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.first-bubble {
+    background-color: var(--primary-color)
+}
+
+.speech-bubble.top-speech.last-bubble:after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 50%; 
+    width: 0; 
+    height: 0; 
+    border: 20px solid transparent; 
+    border-bottom-color: var(--caution-color); 
+    border-top: 0px; 
+    margin-left: -20px; 
+    margin-top: -19px; 
+}
+
+.last-bubble {
+    background-color: var(--caution-color);
+    color: white;
+    box-shadow: 3px 6px 3px black;
+    max-width: 400px;
+}
+
+.speech-bubble-thing {
+    padding-bottom: 2em;
+}
+
+.footer {
+    height: 50px;
+    background-color: var(--primary-color);
+}
+
+hr {
+    border-color: rgb(161, 161, 161);
+    background-color: rgb(161, 161, 161);
+}
+
+.shell-example-card {
+    background-color: rgb(207, 216, 210);
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.205);
+}
+
+.shell-box {
+    background-color: rgb(37, 37, 37);
+    border-radius: 0.5em; 
+    color: white;
+    padding: 1em;
+    font-family: monospace;
+    box-shadow:  inset 0 0 15px #000000;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.shell-prompt {
+    color: rgb(0, 110, 255);
+}
+
+.card-head {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+/*.file-example {
+    white-space: pre;
+}*/
+
+.learning-block {
+    background-color: white;
+    border: 1px solid #888;
+    padding: 1em;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.learn-icon {
+    color: var(--primary-color);
+    font-size: 3em;
+    text-align: center;
+}
+
+.new-queries {
+    background-color: white;
+    border: 1px solid #888;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+
+/* Desktop media query. */
+@media (min-width: 1285px) {
+    .left-speech {
+        float: left;
+        max-width: 30%;
+        margin: 10px;
+    }
+
+    .right-speech {
+        float: right;
+        max-width: 30%;
+        margin: 10px;
+    }
+
+    .first-bubble {
+        max-width: 300px;
+    }
+
+    .shell-box {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Hide some stuff on mobile */
+@media (max-width: 800px) {
+    .no-mobile {
+        display: none;
+    }
+}
