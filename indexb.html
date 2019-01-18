@@ -157,8 +157,20 @@ defines:
         into the command line.
       </h2>
       <div class="shell-example-card">
-        <div class="card-head">Express common shell commands in natural language, and get an 
-        executable command back.</div>
+        <div class="card-head">When given normal shell commands aish acts just like 
+          traditional shell like Bash.
+        </div>
+        <div class="shell-box">
+          <div>
+          <span class="shell-prompt">$</span> ls -lS<br>
+          foo.txt     bar.txt     baz.txt<br>
+        </div>
+      </div>
+      <div class="shell-example-card">
+        <div class="card-head">
+          However, if you don't remember or know the command, you can 
+          express it in natural language.
+        </div>
         <div class="shell-box">
           <span class="shell-prompt">$</span> list all files in long format sorted by file size<br>
           Model predict "ls -lS" (Confidence 0.82)<br>
@@ -166,23 +178,14 @@ defines:
         </div>
       </div>
       <div class="shell-example-card">
-        <div class="card-head">Mix natural lanugage and shell commands to fill in the flags you
-        might have forgotten.
+        <div class="card-head">
+          If you know part of the command, you can use "hybrid language" and
+          mix natural language and actual commands and flags.
         </div>
         <div class="shell-box">
           <span class="shell-prompt">$</span> run ls -l but sorted by file size<br>
           Model predict "ls -lS" (Confidence 0.89)<br>
           Would you like to execute this? "yes" to confirm:
-        </div>
-      </div>
-      <div class="shell-example-card">
-        <div class="card-head">When given normal shell commands aish acts just like 
-          more traditional shell like Bash.
-        </div>
-        <div class="shell-box">
-          <div>
-          <span class="shell-prompt">$</span> ls -lS<br>
-          foo.txt     bar.txt     baz.txt<br>
         </div>
       </div>
     </div>
