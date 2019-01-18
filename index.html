@@ -45,7 +45,7 @@
           examples, and it then uses machine learning to understand many 
           different phrasings of the command. 
         </h2>
-        <div class="kenel-flow-diagram columns is-desktop is-vcentered">
+        <div class="kenel-flow-diagram columns is-2 is-desktop is-vcentered">
           <div class="column is-one-third">
             <div class="has-text-centered is-size-5">
               Specification of Program<br>
@@ -83,25 +83,25 @@ defines:
 - define_new: example_set
   y_type: CommandSequence
   examples:
-    - x:
-      - list all files
-      - print all files and directories here
-      - list all files and dirs in this dir
-      y:
-      - "ls"
-    - x:
-      - list all files in long format
-      - list all files stuff like file size
-      - display a long list of current dir
-      y:
-      - "ls -l"
-    - x:
-      - list all files with dot files
-      - list all files with hidden files
-      - list all including dot files
-      y:
-      - "ls -a"
-    # Examples...
+   - x:
+     - list all files
+     - print all files and directories here
+     - list all files and dirs in this dir
+     y:
+     - "ls"
+   - x:
+     - list all files in long format
+     - list all files stuff like file size
+     - display a long list of current dir
+     y:
+     - "ls -l"
+   - x:
+     - list all files with dot files
+     - list all files with hidden files
+     - list all including dot files
+     y:
+     - "ls -a"
+   # Examples...
               </pre>
             ls_examples.ainix.yaml
             </div>
@@ -121,12 +121,14 @@ defines:
                 </div>
               </div>
               <div class="has-text-centered is-size-5">New User Utterances:</div>
-              <div>what files and dirs are here? -> ls</div>
-              <div>show files here with dot files -> ls -a</div>
-              ...
+              <div class="has-text-centered">
+                what files and dirs are here? -> ls<br>
+                how files here with dot files -> ls -a<br>
+                ...
+              </div>
             </div>
             <i>More examples of what programs and examples might look like
-            are available on the repo, and actual docs should hopefully be
+            are available in the repo, and actual docs should hopefully be
             available soon.</i>
           </div>
         </div>
@@ -137,7 +139,7 @@ defines:
           checking the weather, setting the thermostat, or ordering something 
           online. Additionally it is designed to be
           adaptable enough to eventually support many kinds of user interfaces
-          ("shells"), from a command line shell, to a voice assitant, to a 
+          ("shells"), from a command line shell, to a voice assistant, to a 
           video game character.
         </div>
       </div>
@@ -189,15 +191,15 @@ defines:
     </div>
   </section>
   <section class="section">
-      <div class="container">
+      <div class="container partially-transparent">
         <h1 class="title">axio</h1>
         <h2 class="subtitle">
           axio is a planned communication spec that will work over stdout and
-          stdin but allow for rich output (like images, charts, street maps, or
-          whole webpages) inline in a shell. It will also focus on being 
-          data centric, so that different kinds of shells can present output 
+          stdin but allow for rendering rich output (like images, charts, street maps, or
+          whole web pages) inline in a shell. It will focus on being 
+          data-centric, so that different kinds of shells can present output 
           in different ways. 
-          For example, a command line shell, a voice assistent, and a chatbot
+          For example, a command line shell, a voice assistant, and a chatbot
           might all choose to present a program 
           outputting something like 
           progress bar event or a calendar date in different ways.
@@ -243,9 +245,9 @@ defines:
       </div>
       <h2 class="subtitle">
         Interacting with computers through language is no longer science fiction.
-        As these systems become increasingly prevolent and more and more 
+        As these systems become increasingly prevalent and more and more 
         essential to our daily lives, it is important there are open source 
-        options. The AInix Project is building a language driven computing
+        options. The AInix Project is building a language driven AI-assisted computing
         platform that puts the user first, and hopes to help aid work 
         towards more safe, transparent, and understandable AI.
       </h2>
@@ -257,7 +259,7 @@ defines:
         <h1 class="title has-text-centered">Get Involved</h1>
         <hr>
         <h2 class="subtitle">
-          You can follow development at our Github repo. We welcome any ideas, bug reports, or 
+          You can follow development at our GitHub repo. We welcome any ideas, bug reports, or 
           contributions. It is early enough where any contributions you make can
           have a big impact on the future of the project.
         </h2>

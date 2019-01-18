@@ -1,7 +1,12 @@
-/*.top-header {
-    background-color: #14B694;
-    min-height: 40vh;
-}*/
+.top-header {
+    margin-bottom: 30px;
+}
+
+.section {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
 :root {
     --primary-color: #14B694;
     --primary-light: rgb(72, 214, 183);
@@ -212,6 +217,14 @@ hr {
     margin: auto;
 }
 
+.user-utterance-examples {
+    text-align: center;
+}
+
+.partially-transparent {
+    opacity: 0.4;
+}
+
 
 /* Desktop media query. */
 @media (min-width: 1285px) {
@@ -235,6 +248,7 @@ hr {
         overflow-x: auto;
         white-space: nowrap;
     }
+
 }
 
 /* Hide some stuff on mobile */
